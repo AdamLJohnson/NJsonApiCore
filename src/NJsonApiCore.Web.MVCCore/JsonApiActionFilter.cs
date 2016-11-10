@@ -120,7 +120,7 @@ namespace NJsonApi.Web
 
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            if (context.Result == null || context.Result is NoContentResult)
+            if (context.Result == null || context.Result is NoContentResult || context.Result is JsonApiErrorResult)
             {
                 return;
             }
